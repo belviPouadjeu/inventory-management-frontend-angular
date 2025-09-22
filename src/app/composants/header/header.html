@@ -2,24 +2,22 @@
   <div class="col-md-4">
     <h2 class="header-title">Gestion de Stock</h2>
   </div>
-  <div class="col-md-4">
+  <div class="col-12 col-lg-4 mb-2 mb-lg-0">
     <div class="input-group flex-nowrap">
       <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Search" aria-describedby="addon-wrapping">
       <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="row align-items-center">
-      <div class="col-md-9 text-end">
-        <span class="user-greeting">{{ connectedUser?.prenom || 'Utilisateur' }}</span>
-      </div>
-      <div class="col-md-3">
-        <a href="javascript:void(0)" [routerLink]="['/profil']">
-          <img src="favicon.ico" class="rounded-circle user-avatar" alt="Profile">
-        </a>
-      </div>
+  <div class="col-12 col-lg-4">
+    <div class="header-actions d-flex align-items-center justify-content-end gap-3">
+      <span class="user-greeting text-nowrap">{{ connectedUser?.prenom || 'Utilisateur' }}</span>
+      <a href="javascript:void(0)" [routerLink]="['/profil']" class="d-inline-flex align-items-center">
+        <img src="favicon.ico" class="rounded-circle user-avatar" alt="Profile">
+      </a>
+      <button type="button" class="btn btn-outline-secondary btn-sm logout-btn" (click)="logout()">
+        <i class="fas fa-sign-out-alt me-1"></i>
+        <span class="d-none d-xl-inline">Déconnexion</span>
+      </button>
     </div>
   </div>
 </div>
-
-

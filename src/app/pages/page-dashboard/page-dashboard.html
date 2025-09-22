@@ -1,9 +1,13 @@
 <div class="main-contener">
+  <!-- Mobile-only header: show header above the menu and content on phones -->
+  <div class="card p-3 min-height-80 mb-2 d-block d-lg-none">
+    <app-header></app-header>
+  </div>
   <div class="row min-height-600 no-flex-wrap">
     <div class="card col-md-2 mr-2">
       <div class="col pl-0 pr-0">
         <div class="card mt-3 mb-2 border-none">
-          <h4 style="color: black;"> Gestion de stock</h4>
+          <h4 style="color: black">Gestion de stock</h4>
         </div>
         <div>
           <app-menu></app-menu>
@@ -11,8 +15,8 @@
       </div>
     </div>
     <div class="card col-md-10 pl-0 pr-0 background-grey border-none">
-      <div class="col pl-0 pr-0  d-flex flex-column justify-content-between">
-        <div class="card p-3 min-height-80 mb-2">
+      <div class="col pl-0 pr-0 d-flex flex-column justify-content-between">
+        <div class="card p-3 min-height-80 mb-2 d-none d-lg-block">
           <app-header></app-header>
         </div>
         <div class="card mb-2 main-content" style="min-height: 480px">
@@ -41,6 +45,3 @@
     </div>
   </div>
 </div>
-
-
-

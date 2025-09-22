@@ -40,18 +40,35 @@
   box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
 }
 
+/* Header action area spacing */
+.header-actions {
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.logout-btn {
+  white-space: nowrap;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .header-title {
     font-size: 1.2rem;
   }
-  
+
   .user-greeting {
     font-size: 0.85rem;
   }
-  
+
   .user-avatar {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-actions {
+    gap: 0.5rem;
+    justify-content: flex-end;
   }
 }

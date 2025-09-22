@@ -18,4 +18,8 @@ export class Header implements OnInit {
   ngOnInit() {
     this.connectedUser = this.userService.getConnectedUser();
   }
+
+  logout(): void {
+    this.userService.logout();
+  }
 }
