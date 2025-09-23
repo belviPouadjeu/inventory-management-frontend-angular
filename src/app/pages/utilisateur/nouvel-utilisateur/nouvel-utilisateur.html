@@ -53,7 +53,12 @@
         <div class="row mb-3">
           <div class="col">
             <label for="motDePasse" class="form-label">Mot de passe *</label>
-            <input type="password" id="motDePasse" class="form-control" placeholder="Mot de passe" [(ngModel)]="utilisateur.motDePasse" name="motDePasse" [required]="!isEditMode">
+            <div class="input-group">
+              <input [type]="showPassword ? 'text' : 'password'" id="motDePasse" class="form-control" placeholder="Mot de passe" [(ngModel)]="utilisateur.motDePasse" name="motDePasse" [required]="!isEditMode">
+              <button type="button" class="btn btn-outline-secondary" (click)="togglePasswordVisibility()" [attr.aria-label]="showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'">
+                <i class="fas" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+              </button>
+            </div>
           </div>
           <div class="col">
             <label for="codePostal" class="form-label">Code postal *</label>

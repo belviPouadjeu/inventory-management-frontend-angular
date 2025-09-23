@@ -17,24 +17,24 @@ export class UserService {
     return this.authenticationService.login(authenticationRequest);
   }
   setConnectedUser(authenticationResponse: AuthResponseDto): void {
-    sessionStorage.setItem('connectedUser', JSON.stringify(authenticationResponse));
-    sessionStorage.setItem('accessToken', authenticationResponse.token || '');
+    localStorage.setItem('connectedUser', JSON.stringify(authenticationResponse));
+    localStorage.setItem('accessToken', authenticationResponse.token || '');
   }
 
   getConnectedUser(): AuthResponseDto {
-    if (sessionStorage.getItem('connectedUser')) {
-      return JSON.parse(sessionStorage.getItem('connectedUser') as string);
+    if (localStorage.getItem('connectedUser')) {
+      return JSON.parse(localStorage.getItem('connectedUser') as string);
     }
     return {};
   }
 
   getAccessToken(): string | null {
-    return sessionStorage.getItem('accessToken');
+    return localStorage.getItem('accessToken');
   }
 
   isUserLoggerAndAccessTokenValid(): boolean {
     const token = this.getAccessToken();
-    if (token && sessionStorage.getItem('connectedUser')) {
+    if (token && localStorage.getItem('connectedUser')) {
       // Check if token is not expired (basic validation)
       try {
         const payload = JSON.parse(atob(token.split('.')[1]));
@@ -51,8 +51,8 @@ export class UserService {
   }
 
   logout(): void {
-    sessionStorage.removeItem('connectedUser');
-    sessionStorage.removeItem('accessToken');
+    localStorage.removeItem('connectedUser');
+    localStorage.removeItem('accessToken');
     this.route.navigate(['login']);
   }
 }

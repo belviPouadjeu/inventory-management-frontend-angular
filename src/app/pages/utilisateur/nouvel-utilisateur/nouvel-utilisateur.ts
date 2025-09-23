@@ -33,6 +33,7 @@ export class NouvelUtilisateur implements OnInit {
   isLoading = false;
   isEditMode = false;
   utilisateurId: number | null = null;
+  showPassword = false;
 
   constructor(
     private readonly router: Router,
@@ -202,5 +203,9 @@ export class NouvelUtilisateur implements OnInit {
 
   cancel(): void {
     this.router.navigate(['utilisateurs']);
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 }

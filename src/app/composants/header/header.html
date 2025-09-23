@@ -10,7 +10,7 @@
   </div>
   <div class="col-12 col-lg-4">
     <div class="header-actions d-flex align-items-center justify-content-end gap-3">
-      <span class="user-greeting text-nowrap">{{ connectedUser?.prenom || 'Utilisateur' }}</span>
+      <span class="user-greeting text-nowrap">{{ displayName }}</span>
       <a href="javascript:void(0)" [routerLink]="['/profil']" class="d-inline-flex align-items-center">
         <img src="favicon.ico" class="rounded-circle user-avatar" alt="Profile">
       </a>
